@@ -5,7 +5,7 @@ LABEL author="leosocy"
 # install RobustPalmRoi library
 COPY . /tmp/app
 RUN apk add --no-cache --virtual build-dependencies make cmake linux-headers git && \
-    cd /tmp && git clone https://github.com/jbeder/yaml-cpp.git && \
+    cd /tmp && git clone https://github.com/jbeder/yaml-cpp/tree/yaml-cpp-0.6.2 && \
     cd yaml-cpp && mkdir -p build && cd build && \
     cmake -DBUILD_SHARED_LIBS=ON -DYAML_CPP_BUILD_TESTS=OFF -DYAML_CPP_BUILD_TOOLS=OFF -DYAML_CPP_BUILD_CONTRIB=OFF .. && \
     make install && \
